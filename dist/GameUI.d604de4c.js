@@ -144,39 +144,38 @@ function () {
       return cell === 'O';
     }).length;
     return countX === countO ? 'X' : 'O';
-    ;
   };
 
   Game.prototype.getWinner = function () {
-    if (this.cells[0] === this.cells[1] && this.cells[1] === this.cells[2]) {
+    if (this.cells[0] === this.cells[1] && this.cells[1] === this.cells[2] && this.cells[0] !== '-') {
       return this.cells[0];
     }
 
-    if (this.cells[3] === this.cells[4] && this.cells[4] === this.cells[5]) {
+    if (this.cells[3] === this.cells[4] && this.cells[4] === this.cells[5] && this.cells[3] !== '-') {
       return this.cells[3];
     }
 
-    if (this.cells[6] === this.cells[7] && this.cells[7] === this.cells[8]) {
+    if (this.cells[6] === this.cells[7] && this.cells[7] === this.cells[8] && this.cells[6] !== '-') {
       return this.cells[6];
     }
 
-    if (this.cells[0] === this.cells[3] && this.cells[3] === this.cells[6]) {
+    if (this.cells[0] === this.cells[3] && this.cells[3] === this.cells[6] && this.cells[0] !== '-') {
       return this.cells[0];
     }
 
-    if (this.cells[1] === this.cells[4] && this.cells[4] === this.cells[7]) {
+    if (this.cells[1] === this.cells[4] && this.cells[4] === this.cells[7] && this.cells[1] !== '-') {
       return this.cells[1];
     }
 
-    if (this.cells[2] === this.cells[5] && this.cells[5] === this.cells[8]) {
+    if (this.cells[2] === this.cells[5] && this.cells[5] === this.cells[8] && this.cells[2] !== '-') {
       return this.cells[2];
     }
 
-    if (this.cells[0] === this.cells[4] && this.cells[4] === this.cells[8]) {
+    if (this.cells[0] === this.cells[4] && this.cells[4] === this.cells[8] && this.cells[0] !== '-') {
       return this.cells[0];
     }
 
-    if (this.cells[2] === this.cells[4] && this.cells[4] === this.cells[6]) {
+    if (this.cells[2] === this.cells[4] && this.cells[4] === this.cells[6] && this.cells[2] !== '-') {
       return this.cells[2];
     }
 
@@ -200,6 +199,16 @@ function () {
     }
 
     this.cells[i] = this.getTurn();
+    /*
+    if (this.getWinner().includes("-"))
+    {
+      if (this.cells[i] !== '-')
+      {
+        return
+      }
+      this.cells[i] = this.getTurn()
+    }
+    */
   };
 
   Game.prototype.restart = function () {
@@ -289,7 +298,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39639" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45204" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
