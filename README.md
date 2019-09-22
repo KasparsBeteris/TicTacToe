@@ -1,4 +1,4 @@
-Link to the uploaded game - https://quizzical-bassi-2a001f.netlify.com/
+Link to the uploaded game - https://unruffled-newton-3a48e1.netlify.com/
 
 # Tic Tac Toe
 
