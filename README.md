@@ -1,3 +1,5 @@
+Link to the uploaded game - https://quizzical-bassi-2a001f.netlify.com/
+
 # Tic Tac Toe
 
 We are going to create Tic Tac Toe game. There is already UI prepared, so we must just make it work.
